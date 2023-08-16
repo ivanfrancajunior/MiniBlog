@@ -98,13 +98,14 @@ const Register = () => {
           />
         </div>
         <div className="mt-10">
-          <Button> Cadastrar </Button>
+        {!loading &&<Button> Cadastrar </Button>}
+        {loading &&<Button> Aguarde... </Button>}
         </div>
       </form>
       <div>
         {error && <p className="text-xl font-bold text-red-500"> { error}</p>
         }
-        {}
+       
       </div>
     </div>
   );

@@ -4,6 +4,7 @@ import About from "./pages/About";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import Register from "./pages/Register.jsx";
+import Login from "./pages/Login";
 function App() {
   return (
     <BrowserRouter>
@@ -14,6 +15,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </main>
     </>
