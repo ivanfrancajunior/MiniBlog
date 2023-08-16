@@ -1,5 +1,4 @@
-import React from "react";
-
+//eslint-disable-next-line
 const Input = ({ placeholder, value, setValue, type }) => {
   return (
     <input

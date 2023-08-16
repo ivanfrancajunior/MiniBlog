@@ -1,7 +1,5 @@
-import { getFirestore } from "firebase/firestore";
 import { initializeApp } from "firebase/app";
-import dotenv from "dotenv";
-dotenv.config();
+import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_APIKEY,
@@ -12,6 +10,8 @@ const firebaseConfig = {
   appId: import.meta.env.VITE_APPID,
 };
 
-
 const app = initializeApp(firebaseConfig);
+
 const db = getFirestore(app);
+
+export { db };

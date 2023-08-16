@@ -3,7 +3,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
-import Register from "./components/Register.jsx";
+import Register from "./pages/Register.jsx";
 function App() {
   return (
     <BrowserRouter>
