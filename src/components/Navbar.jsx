@@ -19,6 +19,9 @@ const Navbar = () => {
         <li className="list-none ">
           <Link to='/post' className="hover:text-[#e48b70]" >Posts</Link>
         </li>
+        <li className="list-none ">
+          <Link to='/register' className="hover:text-[#e48b70]" >Register</Link>
+        </li>
        
       </ul>
       <div>
