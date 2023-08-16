@@ -1,43 +1,8 @@
+# React + Vite
 
-<h1 align="center">MiniBlog 😎</h1>
-<p>
-  <a href="#" target="_blank">
-    <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-red.svg" />
-  </a>
-</p>
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
->  Projeto de miniblog para prática de ReactJS e Firebase.
+Currently, two official plugins are available:
 
-
-## Download
-
-```sh
-git clone https://github.com/ivanfrancajunior/MiniBlog.git
-```
-
-## Install dependencies
-
-```sh
-npm install
-```
-
-## Usage
-
-```sh
-npm run dev
-```
-
-## Author
-
-🙎🏾‍♂️ ** Ivan França**
-Baseado no projeto de <a href="https://github.com/matheusbattisti/curso_react/tree/main/10_MINI_BLOG/miniblog">Miniblog</a> desenvolvido no curso de 'React do zero a maestria' de <a href="https://github.com/matheusbattisti"> Matheus Battisti - Hora de Codar </a>
-
-
-* Github: [ivanfrancajunior](https://github.com/ivanfrancajunior)
-* LinkedIn: [ivanjrdev](https://www.linkedin.com/in/ivanjrdev/)
-
-## Show your support
-
-Give a ⭐️ if this project helped you!
-
-***
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
