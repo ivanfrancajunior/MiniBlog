@@ -4,12 +4,12 @@ const Footer = () => {
   const date = new Date();
   const now = date.getFullYear();
   return (
-    <footer className="flex items-center justify-between px-10 gap-20  bg-zinc-900 text-white h-20">
-      <div>
+    <footer className="flex items-center justify-center md:justify-between px-10 gap-20  bg-zinc-900 text-white h-20">
+      <div className="hidden lg:flex">
         <Logo size={32} />
       </div>
-      <div>  &copy; {now} - Feito com carinho 🧡  </div>
-      <div className="flex items-center justify-between gap-5">
+      <div className="hidden md:flex">  &copy; {now} - Feito com carinho 🧡  </div>
+      <div className="flex items-center justify-between gap-5  ">
         <span className="cursor-pointer hover:traslate-y-1 hover:translate-x-1 transition duration-300  ">
           <svg
             xmlns="http://www.w3.org/2000/svg"
