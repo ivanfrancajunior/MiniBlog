@@ -22,11 +22,10 @@ const CreatePost = () => {
     setFormError("");
 
     try {
-      new URL(image)
-
+      new URL(image);
     } catch (error) {
       setFormError("A imagem precisa ter uma URL.");
-      return
+      return;
     }
 
     const tagsArray = tags.split(",").map((tag) => tag.trim().toLowerCase());
@@ -46,7 +45,7 @@ const CreatePost = () => {
       createdBy: user.displayName,
     });
 
-    navigate("/")
+    navigate("/");
   };
 
   return (
@@ -99,13 +98,15 @@ const CreatePost = () => {
         <div className="mt-10 ">
           {!response.loading && <Button> Criar </Button>}
           {response.loading && <Button> Criando... </Button>}
-          
         </div>
       </form>
       {formError && (
-        <p className="text-xl font-bold text-red-500 text-center"> {(response.error || formError) && (
-          <p className="error">{response.error || formError}</p>
-        )}</p>
+        <p className="text-xl font-bold text-red-500 text-center">
+          {" "}
+          {(response.error || formError) && (
+            <p className="error">{response.error || formError}</p>
+          )}
+        </p>
       )}
     </div>
   );

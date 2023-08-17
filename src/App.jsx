@@ -31,9 +31,9 @@ function App() {
 
   if (loadingUser) {
     return (
-      <>
+      <div className="flex items-center justify-center h-screen w-full bg-black">
         <Loader />
-      </>
+      </div>
     );
   }
   return (
