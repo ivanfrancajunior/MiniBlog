@@ -3,10 +3,13 @@ import "./Spiner.css"
 
 const Loader = () => {
   return (
-    <span className="loader">
-      <span className="circle"></span>
-      <span className="circle"></span>
-    </span>
+    <div className="loader text-center ">
+      <div className="loader__circle"></div>
+      <div className="loader__circle"></div>
+      <div className="loader__circle"></div>
+      <div className="loader__circle"></div>
+      <div className="loader__circle"></div>
+    </div>
   )
 }
 

@@ -38,6 +38,7 @@ function App() {
         <>
           <Navbar />
           <main className="bg-[#F9F4EC] text-zinc-800 dark:bg-[#201F1F]  dark:text-[#f5f5f5] flex flex-col  items-center  justify-start h-auto pb-[5vh]">
+            <> <Loader/> </>
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
