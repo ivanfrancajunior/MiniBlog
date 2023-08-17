@@ -3,6 +3,7 @@ import Switcher from "./Switcher";
 import { Link } from "react-router-dom";
 import { useAuthValue } from "../context/AuthContetxt";
 import { useAuthentication } from "../hooks/useAuthentication";
+
 const Navbar = () => {
   const { user } = useAuthValue();
   const { logout } = useAuthentication();
@@ -16,37 +17,33 @@ const Navbar = () => {
         {!user && (
           <>
             <li>
-              <Link to="/login">Entrar</Link>
+              <Link to="/login" className="hover:text-[#e48b70]">Entrar</Link>
             </li>
             <li>
-              <Link to="/register">Registrar</Link>
+              <Link to="/register" className="hover:text-[#e48b70]">Registrar</Link>
             </li>
           </>
         )}
+
         {user && (
           <>
             <li>
-              <Link to="/posts/create">Novo!</Link>
+              <Link to="/posts/create" className="hover:text-[#e48b70]">Novo!</Link>
             </li>
             <li>
-              <Link to="/dashboard">Dashboard</Link>
+              <Link to="/dashboard" className="hover:text-[#e48b70]">Dashboard</Link>
             </li>
           </>
         )}
         <li>
-            <Link
-              to="/about"
-              
-            >
-              Sobre
-            </Link>
+          <Link to="/about" className="hover:text-[#e48b70]">Sobre</Link>
+        </li>
+        {user && (
+          <li>
+            <button onClick={logout}>sair</button>
           </li>
-          {user && (
-            <li>
-              <button onClick={ () => logout }>sair</button>
-            </li>
-          )}
-        
+        )}
+
         {/* <li className="list-none ">
           <Link to="/" className="hover:text-[#e48b70]">
             Home

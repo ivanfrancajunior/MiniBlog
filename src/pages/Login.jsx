@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+
 import Button from "../components/Button";
 import Input from "../components/Input";
 import { useAuthentication } from "../hooks/useAuthentication";
@@ -8,6 +9,7 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const { login, error: authError, loading } = useAuthentication();
+ 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -20,9 +22,7 @@ const Login = () => {
     };
 
     const res = await login(user);
-    if(res === "Ok"){
-      console.log("deu boa")
-    }
+    
     
   };
   useEffect(() => {
