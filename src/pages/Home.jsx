@@ -1,7 +1,7 @@
 
 const Home = () => {
   return (
-    <div className="mt-16 min-h-[70vh]">
+    <div className="mt-16 min-h-[70vh] h-screen">
     
     Home
     </div>
