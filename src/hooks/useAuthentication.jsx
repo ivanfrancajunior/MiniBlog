@@ -3,7 +3,8 @@ import {
   getAuth,
   createUserWithEmailAndPassword,
   updateProfile,
-  signInWithEmailAndPassword
+  signInWithEmailAndPassword,
+  signOut
 } from "firebase/auth";
 import { db } from "../config/firebaseConfig";
 
@@ -78,8 +79,13 @@ export const useAuthentication = () => {
       setLoading(false);
     }
   };
+  const logout = () => {
+    signOut(auth);
+
+    checkIfIsCancelled();
+  };
   useEffect(() => {
     return setCancelled(true);
   }, []);
-  return { auth,login, createUser, error, loading };
+  return { auth, login,logout, createUser, error, loading };
 };
