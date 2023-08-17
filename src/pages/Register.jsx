@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import { useAuthentication } from "../hooks/useAuthentication";
 const Register = () => {
   const [name, setName] = useState("");
-  const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -18,7 +17,6 @@ const Register = () => {
 
     const newUser = {
       name,
-      lastName,
       email,
       password,
     };
@@ -32,7 +30,6 @@ const Register = () => {
     const res = await createUser(newUser);
 
     setName("");
-    setLastName("");
     setEmail("");
     setPassword("");
     setConfirmPassword("");
@@ -62,14 +59,7 @@ const Register = () => {
             setValue={(e) => setName(e.target.value)}
           />
         </div>
-        <div className="flex flex-col items-start ">
-          <label className="pb-1">Sobrenome</label>
-          <Input
-            placeholder={"Digite seu sobrenome"}
-            value={lastName}
-            setValue={(e) => setLastName(e.target.value)}
-          />
-        </div>
+        
         <div className="flex flex-col items-start ">
           <label className="pb-1">Email</label>
           <Input
