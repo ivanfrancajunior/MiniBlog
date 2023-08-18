@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useFetchDocument } from "../hooks/useFetchDocument.jsx";
+import Loader from "../components/Loader.jsx";
 
 const Post = () => {
   const { id } = useParams();
@@ -7,7 +8,11 @@ const Post = () => {
   return (
     <div className="flex  flex-col container items-center justify-start gap-4  min-h-screen h-auto">
       <h1>Posts</h1>
-      {loading && <p>Carregando post...</p>}
+      {loading && (
+        <>
+          <Loader />
+        </>
+      )}
 
       {post && (
         <>
