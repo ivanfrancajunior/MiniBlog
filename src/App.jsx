@@ -11,6 +11,7 @@ import Navbar from "./components/Navbar";
 import CreatePost from "./pages/CreatePost";
 import EditPost from "./pages/EditPost";
 import Dashboard from "./pages/Dashboard";
+import Search from "./pages/Search";
 
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -45,6 +46,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
+              <Route path='/search' element={<Search />}/>
               <Route
                 path="/register"
                 element={!user ? <Register /> : <Navigate to="/" />}
