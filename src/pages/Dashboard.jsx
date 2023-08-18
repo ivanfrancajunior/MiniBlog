@@ -15,28 +15,48 @@ const Dashboard = () => {
 
   return (
     <div className="flex  flex-col container items-center justify-start gap-4  min-h-screen h-auto">
-     <h2>Dashboard</h2>
-      <p>Gerencie seus Posts</p>
-      {posts && posts.length === 0 ?(
-        <div > 
-          <p>Não foram encontrados  posts</p>
-          <Link to='/posts/create' className='btn' >Crie seu post!</Link>
-        </div>) 
-        :(<>
-          <div > 
-            <span>Título</span>
-            <span>Ações</span>
-
-          </div>
-          {posts && posts.map((post)=>(<div key={post.id} >
-            <p>{post.title}</p>
-            <div>
-              <Link to={`/posts/${post.id}`}className='btn btn-outline' > Ver </Link>
-              <Link to={`/posts/edit/${post.id}`}className='btn btn-outline' > Editar </Link>
-              <button onClick={()=>deleteDocument(post.id)} className='btn btn-outline btn-danger'>Excluir</button>
-            </div>
-
-          </div>))}
+      <h2 className="my-8 text-5xl">Dashboard</h2>
+      <p className="my-8 text-2xl">Gerencie seus Posts</p>
+      {posts && posts.length === 0 ? (
+        <div>
+          <p>Não foram encontrados posts</p>
+          <Link to="/posts/create" className="btn">
+            Crie seu post!
+          </Link>
+        </div>
+      ) : (
+        <>
+          {posts &&
+            posts.map((post) => (
+              <div
+                key={post.id}
+                className="flex items-center justify-between gap-4 p-4 border-y w-[320px]"
+              >
+                <p className="text-orange-500">{post.title}</p>
+                <div className="flex gap-4 items-center ">
+                  <Link
+                    to={`/posts/${post.id}`}
+                    className="p-2 bg-blue-500 rounded  text-center"
+                  >
+                    {" "}
+                    Ver{" "}
+                  </Link>
+                  <Link
+                    to={`/posts/edit/${post.id}`}
+                    className="p-2 bg-yellow-500 rounded  text-center"
+                  >
+                    {" "}
+                    Editar{" "}
+                  </Link>
+                  <button
+                    onClick={() => deleteDocument(post.id)}
+                    className="p-2 bg-red-500 rounded text-center"
+                  >
+                    Excluir
+                  </button>
+                </div>
+              </div>
+            ))}
         </>
       )}
     </div>
