@@ -32,10 +32,10 @@ export const useAuthentication = () => {
         data.password
       );
       await updateProfile(user, {
-        name: data.displayName,
+        displayName: data.displayName,
       });
       setLoading(false);
-
+      console.log("user: ", user)
       return user;
     } catch (error) {
       console.log(error.message);

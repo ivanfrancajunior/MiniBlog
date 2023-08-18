@@ -1,10 +1,10 @@
-
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 const PostDetail = ({ post }) => {
   return (
     <div className="mb-8">
-      <img className="max-w-[480px]" src={post.image} alt={post.title} />
+      <img className="w-[360px] md:w-[600px] " src={post.image} alt={post.title} />
       <h2 className="mb-2">{post.title}</h2>
       <p className="italic text-gray-600 text-sm mb-4">
         Criado por: {post.createdBy}
@@ -25,3 +25,13 @@ const PostDetail = ({ post }) => {
 };
 
 export default PostDetail;
+
+PostDetail.propTypes = {
+  post: PropTypes.shape({
+    image: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    createdBy: PropTypes.string.isRequired,
+    tagsArray: PropTypes.arrayOf(PropTypes.string).isRequired,
+    id: PropTypes.number.isRequired,
+  }).isRequired,
+};

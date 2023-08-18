@@ -1,8 +1,9 @@
-
 const About = () => {
   return (
-    <div>About</div>
-  )
-}
+    <div className="flex  flex-col container items-center justify-start gap-4  min-h-screen h-auto">
+      About
+    </div>
+  );
+};
 
-export default About
+export default About;

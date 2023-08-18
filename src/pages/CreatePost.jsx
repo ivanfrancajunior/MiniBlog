@@ -16,7 +16,7 @@ const CreatePost = () => {
   const navigate = useNavigate();
   const { insertDocument, response } = useInsertDocument("posts");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     setFormError("");
@@ -36,7 +36,7 @@ const CreatePost = () => {
 
     if (formError) return;
 
-    insertDocument({
+    await insertDocument({
       title,
       image,
       body,
@@ -49,7 +49,7 @@ const CreatePost = () => {
   };
 
   return (
-    <div className="flex  flex-col container items-center justify-start gap-4  h-auto">
+    <div className="flex  flex-col container items-center justify-start gap-4  min-h-screen h-auto ">
       <h1 className="mt-20 mb-5 text-5xl font-bold text-center">Criar Post</h1>
       <p className="mb-5 text-xl text-center italic text-zinc-500">
         Escreva sobre o q quiser e compartilhe!

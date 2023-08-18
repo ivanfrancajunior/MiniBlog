@@ -1,7 +1,7 @@
 
 const Search = () => {
   return (
-    <div>Search</div>
+    <div className="flex  flex-col container items-center justify-start gap-4  min-h-screen h-auto">Search</div>
   )
 }
 

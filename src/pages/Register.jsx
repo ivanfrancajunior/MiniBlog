@@ -3,7 +3,7 @@ import Input from "../components/Input";
 import { useState, useEffect } from "react";
 import { useAuthentication } from "../hooks/useAuthentication";
 const Register = () => {
-  const [name, setName] = useState("");
+  const [displayName, setDisplayName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -15,8 +15,8 @@ const Register = () => {
 
     setError("");
 
-    const newUser = {
-      name,
+    const user = {
+      displayName,
       email,
       password,
     };
@@ -27,19 +27,17 @@ const Register = () => {
       return;
     }
 
-    const res = await createUser(newUser);
+    const res = await createUser(user);
+    console.log("user: ", res);
 
-    setName("");
-    setEmail("");
-    setPassword("");
-    setConfirmPassword("");
+    
   };
   useEffect(() => {
     if (authError) setError(authError);
   }, [authError]);
 
   return (
-    <div className="flex  flex-col container items-center justify-start gap-4  ">
+    <div className="flex  flex-col container items-center justify-start gap-4 min-h-screen h-auto ">
       <h1 className="mt-20 mb-5 text-5xl font-bold text-center">
         Cadastre-se para postar!
       </h1>
@@ -55,8 +53,8 @@ const Register = () => {
           <label className="pb-1">Nome</label>
           <Input
             placeholder={"Digite seu Nome"}
-            value={name}
-            setValue={(e) => setName(e.target.value)}
+            value={displayName}
+            setValue={(e) => setDisplayName(e.target.value)}
           />
         </div>
         

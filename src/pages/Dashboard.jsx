@@ -1,7 +1,7 @@
 
 const Dashboard = () => {
   return (
-    <div>Dashboard</div>
+    <div className="flex  flex-col container items-center justify-start gap-4  min-h-screen h-auto">Dashboard</div>
   )
 }
 

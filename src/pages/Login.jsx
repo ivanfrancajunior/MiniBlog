@@ -21,13 +21,13 @@ const Login = () => {
     };
 
     const res = await login(user);
-    console.log(res);
+    console.log("res: ", res, 'user: ', user);
   };
   useEffect(() => {
     if (authError) setError(authError);
   }, [authError]);
   return (
-    <div className="flex  flex-col container items-center justify-start gap-4  h-screen">
+    <div className="flex  flex-col container items-center justify-start gap-4  min-h-screen h-auto" >
       <h1 className="mt-20 mb-5 text-5xl font-bold text-center">Entrar</h1>
       <p className="mb-5 text-xl text-center italic text-zinc-500">Faça login</p>
       <form
