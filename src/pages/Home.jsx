@@ -27,7 +27,7 @@ const Home = () => {
         className="flex flex-col items-center justify-start gap-4"
         onSubmit={handleSubmit}
       >
-        <div className="flex  items-start gap-1">
+        <div className="flex flex-col md:flex-row items-center gap-2">
           <Input
             placeholder={"Pesquisar"}
             value={query}
