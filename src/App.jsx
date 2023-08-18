@@ -19,6 +19,8 @@ import Register from "./pages/Register.jsx";
 import Login from "./pages/Login";
 import Post from "./pages/Post";
 
+//TODO: REFAZER UI
+
 function App() {
   const [user, setUser] = useState(undefined);
   const { auth } = useAuthentication();
