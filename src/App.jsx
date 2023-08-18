@@ -17,6 +17,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Register from "./pages/Register.jsx";
 import Login from "./pages/Login";
+import Post from "./pages/Post";
 
 function App() {
   const [user, setUser] = useState(undefined);
@@ -71,6 +72,7 @@ function App() {
                 path="/dashboard"
                 element={user ? <Dashboard /> : <Navigate to="/login" />}
               />
+              <Route path='/posts/:id' element={<Post />}/>
             </Routes>
           </main>
         </>
