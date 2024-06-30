@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
+
+
 const Logo = ({size}) => {
     const [ fill, setFill] = useState('#e48b70')
-    
+
     return (
     <Link to="/" className="flex gap-1 items-center justify-center transition duration-300">
       <span onMouseMove={() => setFill('#584294')} onMouseLeave={() => setFill('#e48b70')}>
