@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useFetchDocument } from "../hooks/useFetchDocument.jsx";
-import Loader from "../components/Loader.jsx";
+import Loader from "../components/Loader";
 
 const Post = () => {
   const { id } = useParams();
