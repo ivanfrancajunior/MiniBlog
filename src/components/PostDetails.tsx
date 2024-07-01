@@ -4,7 +4,7 @@ interface Props {
   post: {
     title: string;
     createdBy: string;
-    tagsArray: string[];
+    tags: string[];
     image: string;
     id: string;
   };
@@ -24,7 +24,7 @@ const PostDetail = ({ post }: Props) => {
           </p>
         </Link>
         <div className='mb-3 text-red-500 '>
-            {post?.tagsArray?.map((tag) => (
+            {post?.tags?.map((tag) => (
               <p key={tag} className='mr-2'>
                 <span className='font-bold'>#</span>
                 {tag}
