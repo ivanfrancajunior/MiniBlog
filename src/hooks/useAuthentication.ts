@@ -4,14 +4,24 @@ import {
   createUserWithEmailAndPassword,
   updateProfile,
   signInWithEmailAndPassword,
-  signOut
+  signOut,
 } from "firebase/auth";
-import { db } from "../config/firebaseConfig";
+
+interface NewUserProps {
+  displayName: string;
+  email: string;
+  password: string;
+}
+
+interface LoginUser {
+  email: string;
+  password: string;
+}
 
 export const useAuthentication = () => {
-  const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(null);
-  const [cancelled, setCancelled] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState<boolean | null>(null);
+  const [cancelled, setCancelled] = useState<boolean | null>(false);
 
   const auth = getAuth();
   function checkIfIsCancelled() {
@@ -20,7 +30,7 @@ export const useAuthentication = () => {
     }
   }
 
-  const createUser = async (data) => {
+  const createUser = async (data: NewUserProps) => {
     checkIfIsCancelled();
 
     setLoading(true);
@@ -35,9 +45,9 @@ export const useAuthentication = () => {
         displayName: data.displayName,
       });
       setLoading(false);
-      console.log("user: ", user)
+      console.log("user: ", user);
       return user;
-    } catch (error) {
+    } catch (error: any) {
       console.log(error.message);
       console.log(typeof error.message);
 
@@ -54,15 +64,15 @@ export const useAuthentication = () => {
       setError(systemErrorMessage);
     }
   };
-  const login = async (data) => {
+  const login = async (data: LoginUser) => {
     checkIfIsCancelled();
 
     setLoading(true);
-    setError(false);
+    setError(null);
 
     try {
       await signInWithEmailAndPassword(auth, data.email, data.password);
-    } catch (error) {
+    } catch (error: any) {
       let systemErrorMessage;
 
       if (error.message.includes("user-not-found")) {
@@ -87,5 +97,5 @@ export const useAuthentication = () => {
   useEffect(() => {
     return setCancelled(true);
   }, []);
-  return { auth, login,logout, createUser, error, loading };
+  return { auth, login, logout, createUser, error, loading };
 };
