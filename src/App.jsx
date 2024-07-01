@@ -6,18 +6,18 @@ import { onAuthStateChanged } from "firebase/auth";
 import { useAuthentication } from "./hooks/useAuthentication";
 
 import Loader from "./components/Loader";
-import Footer from "./components/Footer.jsx";
+import Footer from "./components/Footer";
 
-import CreatePost from "./pages/CreatePost.jsx";
-import EditPost from "./pages/EditPost.jsx";
-import Dashboard from "./pages/Dashboard.jsx";
-import Search from "./pages/Search.jsx";
+import CreatePost from "./pages/CreatePost";
+import EditPost from "./pages/EditPost";
+import Dashboard from "./pages/Dashboard";
+import Search from "./pages/Search";
 
-import Home from "./pages/Home.jsx";
-import About from "./pages/About.jsx";
-import Register from "./pages/Register.jsx";
-import Login from "./pages/Login.jsx";
-import Post from "./pages/Post.jsx";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Register from "./pages/Register";
+import Login from "./pages/Login";
+import Post from "./pages/Post";
 import Navbar from "./components/Navbar";
 
 //TODO: REFAZER UI

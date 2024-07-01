@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { useFetchDocument } from "../hooks/useFetchDocument.jsx";
+import { useFetchDocument } from "../hooks/useFetchDocument";
 import Loader from "../components/Loader";
 
 const Post = () => {

@@ -2,6 +2,10 @@ import Button from "../components/Button";
 import Input from "../components/Input";
 import { useState, useEffect } from "react";
 import { useAuthentication } from "../hooks/useAuthentication";
+
+
+
+
 const Register = () => {
   const [displayName, setDisplayName] = useState("");
   const [email, setEmail] = useState("");
@@ -23,14 +27,14 @@ const Register = () => {
 
     if (password !== confirmPassword) {
       setError("As senhas precisam ser iguais!");
-      
+
       return;
     }
 
     const res = await createUser(user);
     console.log("user: ", res);
 
-    
+
   };
   useEffect(() => {
     if (authError) setError(authError);
@@ -57,7 +61,7 @@ const Register = () => {
             setValue={(e) => setDisplayName(e.target.value)}
           />
         </div>
-        
+
         <div className="flex flex-col items-start ">
           <label className="pb-1">Email</label>
           <Input
@@ -93,7 +97,7 @@ const Register = () => {
       <div>
         {error && <p className="text-xl font-bold text-red-500"> { error}</p>
         }
-       
+
       </div>
     </div>
   );

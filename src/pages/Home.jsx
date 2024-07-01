@@ -18,32 +18,32 @@ const Home = () => {
   };
 
   return (
-    <div className="flex  flex-col container items-center justify-start gap-4  min-h-screen h-auto">
-      <h1 className="mt-20 mb-8 text-5xl font-bold text-center p-2">
+    <div className='flex  flex-col container items-center justify-start gap-4  min-h-screen h-auto'>
+      {/* <h1 className="mt-20 mb-8 text-5xl font-bold text-center p-2">
         Veja nossos posts mais recentes!
-      </h1>
+      </h1> */}
 
       <form
-        className="flex flex-col items-center justify-start gap-4"
+        className=' mt-20 flex flex-col items-center justify-start gap-4'
         onSubmit={handleSubmit}
       >
-        <div className="flex flex-col md:flex-row items-center gap-2">
+        <div className='flex flex-col md:flex-row items-center gap-2'>
           <Input
-            placeholder={"Pesquisar"}
+            placeholder={"Pesquisar por tags"}
             value={query}
             type={"text"}
             setValue={(e) => setQuery(e.target.value)}
           />
-          <Button className="pb-1">Pesquisar</Button>
+          <Button className='pb-1'>Pesquisar</Button>
         </div>
       </form>
-      <div className="container mx-auto flex flex-col items-center justify-start mt-20">
+      <div className='container mx-auto flex flex-col items-center justify-start mt-20'>
         {loading && <p>Carregando...</p>}
         {posts && posts.map((post) => <PostDetail key={post.id} post={post} />)}
         {posts && posts.length === 0 && (
-          <div >
+          <div>
             <p> Não foram encontrados posts 🙁</p>
-            <Link to="/posts/create" className="btn">
+            <Link to='/posts/create' className='btn'>
               Criar um post
             </Link>
           </div>
