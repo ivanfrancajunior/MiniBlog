@@ -6,18 +6,19 @@ import { onAuthStateChanged } from "firebase/auth";
 import { useAuthentication } from "./hooks/useAuthentication";
 
 import Loader from "./components/Loader";
-import Footer from "./components/Footer";
-import Navbar from "./components/Navbar";
-import CreatePost from "./pages/CreatePost";
-import EditPost from "./pages/EditPost";
-import Dashboard from "./pages/Dashboard";
-import Search from "./pages/Search";
+import Footer from "./components/Footer.jsx";
 
-import Home from "./pages/Home";
-import About from "./pages/About";
+import CreatePost from "./pages/CreatePost.jsx";
+import EditPost from "./pages/EditPost.jsx";
+import Dashboard from "./pages/Dashboard.jsx";
+import Search from "./pages/Search.jsx";
+
+import Home from "./pages/Home.jsx";
+import About from "./pages/About.jsx";
 import Register from "./pages/Register.jsx";
-import Login from "./pages/Login";
-import Post from "./pages/Post";
+import Login from "./pages/Login.jsx";
+import Post from "./pages/Post.jsx";
+import Navbar from "./components/Navbar";
 
 //TODO: REFAZER UI
 
@@ -45,7 +46,7 @@ function App() {
       <BrowserRouter>
         <>
           <Navbar />
-          <main className="bg-[#F9F4EC] text-zinc-800 dark:bg-[#201F1F]  dark:text-[#f5f5f5] flex flex-col  items-center  justify-start h-auto pb-[5vh]">
+          <main className=" flex flex-col  items-center  justify-start h-auto pb-[5vh]">
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
