@@ -12,7 +12,7 @@
 </p>
 
 <p align="center">
-     <a href="https://appminiblog.netlify.app/">🔗 Live</a>
+     <a href="https://jota-miniblog.netlify.app/">🔗 Live</a>
 </p>
 
 <p align="center"> Acesse com as credenciais:
