@@ -19,9 +19,6 @@ const Home = () => {
 
   return (
     <div className='flex  flex-col container items-center justify-start gap-4  min-h-screen h-auto'>
-      {/* <h1 className="mt-20 mb-8 text-5xl font-bold text-center p-2">
-        Veja nossos posts mais recentes!
-      </h1> */}
 
       <form
         className=' mt-20 flex flex-col items-center justify-start gap-4'
