@@ -20,7 +20,7 @@ import Login from "./pages/Login";
 import Post from "./pages/Post";
 import Navbar from "./components/Navbar";
 
-//TODO: REFAZER UI
+
 
 function App() {
   const [user, setUser] = useState(undefined);

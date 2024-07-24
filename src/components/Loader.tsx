@@ -1,15 +1,7 @@
-import "./Spiner.css"
+import "./Spiner.css";
 
 const Loader = () => {
-  return (
-    <div className="loader text-center ">
-      <div className="loader__circle"></div>
-      <div className="loader__circle"></div>
-      <div className="loader__circle"></div>
-      <div className="loader__circle"></div>
-      <div className="loader__circle"></div>
-    </div>
-  )
-}
+  return <span className='loading loading-spinner text-success'></span>;
+};
 
-export default Loader
+export default Loader;
