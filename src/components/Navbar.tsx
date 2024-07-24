@@ -3,7 +3,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useAuthValue } from "../context/AuthContetxt";
 import { useAuthentication } from "../hooks/useAuthentication";
-import { RiCloseFill, RiMenuLine } from "react-icons/ri";
 
 const Navbar = () => {
   const { user } = useAuthValue();
@@ -68,44 +67,80 @@ const Navbar = () => {
       </ul>
       <div className='sm:hidden'>
         <button onClick={() => setHidden(!hidden)}>
-          {hidden ? <RiMenuLine width={28} /> : <RiCloseFill />}
+          <>
+            <div className=''>
+              <div className='dropdown'>
+                <div
+                  tabIndex={0}
+                  role='button'
+                  className='btn btn-ghost btn-circle'
+                >
+                  <svg
+                    xmlns='http://www.w3.org/2000/svg'
+                    className='h-5 w-5'
+                    fill='none'
+                    viewBox='0 0 24 24'
+                    stroke='currentColor'
+                  >
+                    <path
+                      strokeLinecap='round'
+                      strokeLinejoin='round'
+                      strokeWidth='2'
+                      d='M4 6h16M4 12h16M4 18h7'
+                    />
+                  </svg>
+                </div>
+                <ul
+                  tabIndex={0}
+                  className='menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3  w-52 p-2 shadow'
+                >
+                  {!user && (
+                    <>
+                      <li>
+                        <Link to='/login' className='hover:text-[#bfff00]'>
+                          Entrar
+                        </Link>
+                      </li>
+                      <li>
+                        <Link to='/register' className='hover:text-[#bfff00]'>
+                          Registrar
+                        </Link>
+                      </li>
+                    </>
+                  )}
+                  {user && (
+                    <>
+                      <li>
+                        <Link
+                          to='/posts/create'
+                          className='hover:text-[#bfff00]'
+                        >
+                          Novo!
+                        </Link>
+                      </li>
+                      <li>
+                        <Link to='/dashboard' className='hover:text-[#bfff00]'>
+                          Dashboard
+                        </Link>
+                      </li>
+                    </>
+                  )}
+                  <li>
+                    <Link to='/about' className='hover:text-[#bfff00]'>
+                      Sobre
+                    </Link>
+                  </li>
+                  {user && (
+                    <li>
+                      <button onClick={logout}>sair</button>
+                    </li>
+                  )}
+                </ul>
+              </div>
+            </div>
+          </>
         </button>
       </div>
-      {/*
-       display mobile
-      <div
-        className={`h-screen w-full  bg-orange-500 ${
-          hidden ? "hidden" : ""
-        } flex h-full flex-col items-start justify-start gap-10 px-10  pt-20 text-xl font-semibold`}
-      >
-        <ul className='flex  cursor-pointer flex-col gap-10'>
-          <li className='list-none '>
-            <Link to='/' className='hover:text-[#bfff00]'>
-              Home
-            </Link>
-          </li>
-          <li className='list-none '>
-            <Link to='/login' className='hover:text-[#bfff00]'>
-              Login
-            </Link>
-          </li>
-          <li className='list-none '>
-            <Link to='/about' className='hover:text-[#bfff00]'>
-              About
-            </Link>
-          </li>
-          <li className='list-none '>
-            <Link to='/post' className='hover:text-[#bfff00]'>
-              Posts
-            </Link>
-          </li>
-          <li className='list-none '>
-            <Link to='/register' className='hover:text-[#bfff00]'>
-              Register
-            </Link>
-          </li>
-        </ul>
-      </div> */}
     </nav>
   );
 };
