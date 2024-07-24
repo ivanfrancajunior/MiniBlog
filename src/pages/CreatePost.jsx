@@ -9,7 +9,7 @@ const CreatePost = () => {
   const [title, setTitle] = useState("");
   const [image, setImage] = useState("");
   const [body, setBody] = useState("");
-  const [tags, setTags] = useState([]);
+  const [tagList, setTagList] = useState([]);
   const [formError, setFormError] = useState("");
 
   const { user } = useAuthValue();
@@ -28,9 +28,9 @@ const CreatePost = () => {
       return;
     }
 
-    const tagsArray = tags.split(",").map((tag) => tag.trim().toLowerCase());
+    const tags = tagList.split(",").map((tag) => tag.trim().toLowerCase());
 
-    if (!title || !image || !tags || !body) {
+    if (!title || !image || !tagList || !body) {
       setFormError("Por favor, preencha todos os campos!");
     }
 
@@ -40,7 +40,7 @@ const CreatePost = () => {
       title,
       image,
       body,
-      tagsArray,
+      tags,
       uid: user.uid,
       createdBy: user.displayName,
     });
@@ -49,18 +49,18 @@ const CreatePost = () => {
   };
 
   return (
-    <div className="flex  flex-col container items-center justify-start gap-4  min-h-screen h-auto ">
-      <h1 className="mt-20 mb-5 text-5xl font-bold text-center">Criar Post</h1>
-      <p className="mb-5 text-xl text-center italic text-zinc-500">
+    <div className='flex  flex-col container items-center justify-start gap-4  min-h-screen h-auto '>
+      <h1 className='mt-20 mb-5 text-5xl font-bold text-center'>Criar Post</h1>
+      <p className='mb-5 text-xl text-center italic text-zinc-500'>
         Escreva sobre o q quiser e compartilhe!
       </p>
 
       <form
-        className="flex flex-col items-center justify-start gap-4"
+        className='flex flex-col items-center justify-start gap-4'
         onSubmit={handleSubmit}
       >
-        <div className="flex flex-col items-start ">
-          <label className="pb-1">Título</label>
+        <div className='flex flex-col items-start '>
+          <label className='pb-1'>Título</label>
           <Input
             placeholder={"Insira um título"}
             value={title}
@@ -68,8 +68,8 @@ const CreatePost = () => {
             setValue={(e) => setTitle(e.target.value)}
           />
         </div>
-        <div className="flex flex-col items-start ">
-          <label className="pb-1">URL da imagem</label>
+        <div className='flex flex-col items-start '>
+          <label className='pb-1'>URL da imagem</label>
           <Input
             placeholder={"Insira uma imagem para seu post"}
             value={image}
@@ -77,8 +77,8 @@ const CreatePost = () => {
             setValue={(e) => setImage(e.target.value)}
           />
         </div>
-        <div className="flex flex-col items-start ">
-          <label className="pb-1">Conteúdo</label>
+        <div className='flex flex-col items-start '>
+          <label className='pb-1'>Conteúdo</label>
           <Input
             placeholder={"Insira o conteúdo do post"}
             value={body}
@@ -86,25 +86,25 @@ const CreatePost = () => {
             setValue={(e) => setBody(e.target.value)}
           />
         </div>
-        <div className="flex flex-col items-start ">
-          <label className="pb-1">Tags</label>
+        <div className='flex flex-col items-start '>
+          <label className='pb-1'>Tags</label>
           <Input
             placeholder={"Insira suas tags separadas por vírgula"}
-            value={tags}
+            value={tagList}
             type={"text"}
-            setValue={(e) => setTags(e.target.value)}
+            setValue={(e) => setTagList(e.target.value)}
           />
         </div>
-        <div className="mt-10 ">
+        <div className='mt-10 '>
           {!response.loading && <Button> Criar </Button>}
           {response.loading && <Button> Criando... </Button>}
         </div>
       </form>
       {formError && (
-        <p className="text-xl font-bold text-red-500 text-center">
+        <p className='text-xl font-bold text-red-500 text-center'>
           {" "}
           {(response.error || formError) && (
-            <p className="error">{response.error || formError}</p>
+            <p className='error'>{response.error || formError}</p>
           )}
         </p>
       )}
