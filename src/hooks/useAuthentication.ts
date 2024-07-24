@@ -45,12 +45,8 @@ export const useAuthentication = () => {
         displayName: data.displayName,
       });
       setLoading(false);
-      console.log("user: ", user);
       return user;
     } catch (error: any) {
-      console.log(error.message);
-      console.log(typeof error.message);
-
       let systemErrorMessage;
 
       if (error.message.includes("Password")) {
@@ -82,8 +78,6 @@ export const useAuthentication = () => {
       } else {
         systemErrorMessage = "Ocorreu um erro, tente mais tarde.";
       }
-
-      console.log(systemErrorMessage);
       setError(systemErrorMessage);
 
       setLoading(false);

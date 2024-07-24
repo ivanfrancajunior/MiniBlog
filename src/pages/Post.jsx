@@ -5,7 +5,6 @@ import Loader from "../components/Loader";
 const Post = () => {
   const { id } = useParams();
   const { document: post, loading } = useFetchDocument("posts", id);
-  console.log(post);
   return (
     <div className='flex  flex-col container items-center justify-start gap-4  min-h-screen h-auto'>
       <h1 className='text-5xl text-center mt-16'>Posts</h1>
