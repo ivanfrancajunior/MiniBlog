@@ -1,5 +1,9 @@
 const Loader = () => {
-  return <span className='loading loading-spinner text-success'></span>;
+  return (
+    <div>
+      <span className='loading loading-spinner text-success'/>
+    </div>
+  );
 };
 
 export default Loader;

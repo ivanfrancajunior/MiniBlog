@@ -3,39 +3,35 @@ import { db } from "../config/firebaseConfig";
 import { doc, DocumentData, getDoc } from "firebase/firestore";
 
 export const useFetchDocument = (docCollection: string, id: string) => {
-  const [document, setDocument] = useState<DocumentData>();
-
-  const [error, setError] = useState<boolean | null>(null);
-
-  const [loading, setLoading] = useState<boolean | null>(null);
-
-  const [cancelled, setCancelled] = useState(false);
+  const [document, setDocument] = useState<DocumentData | null>(null);
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState<boolean>(false);
 
   useEffect(() => {
-    async function loadDocument() {
-      if (cancelled) return;
-
+    const loadDocument = async () => {
       setLoading(true);
 
       try {
         const docRef = doc(db, docCollection, id);
         const docSnap = await getDoc(docRef);
-        if (docSnap) {
-          setDocument(docSnap.data());
+
+        if (!docSnap.exists()) {
+          console.log("No such document exists!");
+          return;
         }
-        setLoading(false);
+
+        setDocument(docSnap.data());
       } catch (error: any) {
-        setError(error.message);
-        setLoading(false);
+        console.log(error);
+        setError(error);
       }
-    }
+
+      setLoading(false);
+    };
 
     loadDocument();
-  }, [docCollection, id, cancelled]);
+  }, [docCollection, id]);
 
-  useEffect(() => {
-    return () => setCancelled(true);
-  }, []);
-
+  
   return { document, loading, error };
 };

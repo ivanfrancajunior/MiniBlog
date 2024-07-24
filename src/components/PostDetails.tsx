@@ -12,7 +12,7 @@ interface Props {
 
 const PostDetail = ({ post }: Props) => {
   return (
-    <div className='w-96 border-2 border-black hover:shadow-[8px_8px_0px_rgba(0,0,0,1)] grid place-content-center  md:w-[540px] mb-4 rounded-md'>
+    <div className='w-96 border-2 hover:shadow-[8px_8px_0px_rgba(0,0,0,1)] grid place-content-center  md:w-[540px] mb-4 '>
       <img className='' src={post?.image} alt={post?.title} />
       <div className='p-4'>
         <Link to={`/posts/${post?.id}`}>
